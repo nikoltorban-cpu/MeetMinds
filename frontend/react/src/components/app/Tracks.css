@@ -1,0 +1,278 @@
+.tracks-page {
+  padding: 40px;
+}
+
+/* ALBUM HEADER */
+
+.album-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 40px;
+
+  margin-bottom: 50px;
+
+  padding: 35px;
+
+  border-radius: 40px;
+
+  background: rgba(80, 31, 31, 0.793);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* IMAGE */
+
+.album-header img {
+  width: 260px;
+
+  height: 260px;
+
+  object-fit: cover;
+
+  border-radius: 35px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* TEXT */
+
+.album-header h1 {
+  color: white;
+
+  font-size: 64px;
+
+  margin-bottom: 14px;
+
+  font-family: "Trebuchet MS", sans-serif;
+
+  background: linear-gradient(135deg, #ffffff, #ffd3df);
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.album-header p {
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 24px;
+}
+
+/* TRACKS LIST */
+
+.tracks-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 22px;
+}
+
+/* TRACK CARD */
+
+.track-card {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 24px;
+
+  border-radius: 30px;
+
+  background: rgba(80, 31, 31, 0.793);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+
+  transition: 0.35s;
+}
+
+/* HOVER */
+
+.track-card:hover {
+  transform: translateY(-6px) scale(1.01);
+
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* TRACK TITLE */
+
+.track-card h2 {
+  color: white;
+
+  font-size: 28px;
+
+  margin-bottom: 8px;
+}
+
+/* TRACK INFO */
+
+.track-card p {
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 16px;
+}
+
+.track-link {
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 28px;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.track-link:hover {
+
+  color: #1db954;
+
+  text-shadow:
+    0 0 14px rgba(29,185,84,0.5);
+
+}
+
+/* LIKE BUTTON */
+
+.track-like-btn {
+  width: 58px;
+
+  height: 58px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  font-size: 24px;
+
+  color: white;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  transition: 0.3s;
+
+  flex-shrink: 0;
+}
+
+.track-like-btn:hover {
+  transform: scale(1.1);
+
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* LIKED */
+
+.track-like-btn.liked {
+  background: linear-gradient(135deg, #ff7b9c, #ff4f7a);
+
+  box-shadow: 0 0 20px rgba(255, 80, 120, 0.4);
+}
+
+/* LIKES */
+
+.track-likes {
+  color: #ffd3df;
+
+  font-weight: bold;
+
+  font-size: 18px;
+
+  min-width: 80px;
+
+  text-align: right;
+}
+
+.goback {
+    position: fixed;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 40px;
+    background-color: transparent;
+    color: #5a2424;
+    font-size: 20px;
+}
+
+.goback:hover {
+    color:#853636;
+    scale: 1.03;
+    cursor: pointer;
+}
+
+.track-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: bold;
+  transition: 0.3s;
+  width: fit-content;
+}
+
+.spotify-icon {
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: 0.3s;
+  color: #158a3e;
+  font-size: 24px;
+}
+
+.track-link:hover .spotify-icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .album-header {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .album-header img {
+    width: 220px;
+
+    height: 220px;
+  }
+
+  .album-header h1 {
+    font-size: 46px;
+  }
+}
+
+@media (max-width: 700px) {
+  .tracks-page {
+    padding: 20px;
+  }
+
+  .track-card {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .track-likes {
+    text-align: left;
+  }
+}

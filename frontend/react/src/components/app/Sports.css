@@ -1,0 +1,230 @@
+.sports-page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.sports-page h1 {
+  text-align: center;
+
+  font-size: 4rem;
+
+  font-weight: 800;
+
+  margin-top: 40px;
+
+  margin-bottom: 10px;
+
+  letter-spacing: 3px;
+
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+
+    #8ef5e0 50%,
+
+    #4da6ff 100%
+  );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 15px rgba(142, 245, 224, 0.3),
+    0 0 30px rgba(77, 166, 255, 0.2);
+}
+
+.sports-page p {
+  text-align: center;
+
+  max-width: 700px;
+
+  margin: -15px auto 40px auto;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 1.1rem;
+
+  line-height: 1.6;
+}
+
+.sports-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+  align-items: flex-start;
+}
+
+.sport-bubble {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 24px;
+  transition: 0.3s ease;
+  overflow: hidden;
+  background-color: #1a5ada75;
+  color: rgba(228, 228, 228, 0.562);
+}
+
+.sport-bubble:hover {
+  transform: scale(1.05);
+  background-color: #0055ff75;
+  color: #ddd;
+}
+
+.sport-bubble.expanded {
+  min-height: 320px;
+}
+
+.sport-title-btn {
+  width: 100%;
+
+  background: transparent;
+
+  border: none;
+
+  color: inherit;
+
+  cursor: pointer;
+
+  font: inherit;
+}
+
+.sport-card {
+  width: 260px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.sport-button {
+  width: 100%;
+
+  padding: 18px;
+
+  border: none;
+
+  cursor: pointer;
+
+  color: white;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  background: rgba(13, 43, 117, 0.85);
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.3s;
+}
+
+.sport-button:hover {
+  background: rgba(21, 112, 239, 0.85);
+}
+
+.sport-details-panel {
+  max-width: 700px;
+
+  margin: 40px auto;
+
+  padding: 30px;
+
+  border-radius: 24px;
+
+  background: rgba(13, 43, 117, 0.85);
+
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  animation: fadeInUp .5s ease;
+}
+
+.sport-details-panel h2 {
+  margin-top: 0;
+
+  color: #8ef5e0;
+}
+
+.level-option {
+  display: block;
+
+  width: 100%;
+
+  margin-bottom: 10px;
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.05);
+
+  color: white;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+.level-option:hover {
+  background: rgba(142, 245, 224, 0.15);
+}
+
+.level-option.selected {
+  background: rgba(142, 245, 224, 0.25);
+
+  border: 1px solid #8ef5e0;
+
+  color: #8ef5e0;
+}
+
+.save-level-btn {
+  margin-top: 10px;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  color: white;
+
+  font-weight: 700;
+
+  background: linear-gradient(135deg, #1570ef, #8ef5e0);
+
+  transition: 0.3s;
+}
+
+.save-level-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(21, 112, 239, 0.4);
+}
+
+.active-sport {
+  border: 2px solid #8ef5e0;
+
+  box-shadow:
+    0 0 20px rgba(142,245,224,.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

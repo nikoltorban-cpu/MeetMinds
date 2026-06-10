@@ -1,0 +1,339 @@
+:root {
+  --deep-ocean: #081b4b;
+  --ocean: #0d2b75;
+  --wave: #1570ef;
+  --light-wave: #4da6ff;
+  --seafoam: #8ef5e0;
+  --sand: #f5e8b7;
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+
+  background: linear-gradient(
+    180deg,
+    var(--deep-ocean) 0%,
+    var(--ocean) 45%,
+    var(--wave) 100%
+  );
+
+  color: white;
+}
+
+/* NAVBAR */
+
+.navbar {
+  height: 85px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 40px;
+
+  background: rgba(8, 27, 75, 0.85);
+
+  backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  color: var(--sand);
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.logo:hover {
+  color: var(--seafoam);
+}
+
+/* CENTER LINKS */
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  margin: 0;
+  padding: 0;
+}
+
+.nav-btn {
+  background: transparent;
+
+  border: none;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  position: relative;
+
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  color: var(--seafoam);
+}
+
+.nav-btn::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
+
+  height: 2px;
+
+  background: var(--seafoam);
+
+  transition: 0.3s;
+}
+
+.nav-btn:hover::after {
+  width: 100%;
+}
+
+/* SEARCH */
+
+.search-container {
+  width: 100%;
+  max-width: 700px;
+
+  position: relative;
+}
+
+.search {
+  width: 240px;
+
+  padding: 12px 18px;
+
+  border-radius: 999px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: white;
+
+  outline: none;
+
+  transition: 0.3s;
+}
+
+.search::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search:focus {
+  border-color: var(--seafoam);
+
+  box-shadow: 0 0 15px rgba(142, 245, 224, 0.3);
+}
+
+/* RIGHT SIDE */
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* PROFILE */
+
+.profile {
+  width: 46px;
+  height: 46px;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, var(--wave), var(--seafoam));
+
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.profile:hover {
+  transform: scale(1.08);
+}
+
+/* BUTTONS */
+
+.login-btn,
+.signup-btn,
+.logout-btn {
+  border: none;
+
+  border-radius: 999px;
+
+  padding: 12px 22px;
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  background: linear-gradient(135deg, var(--wave), var(--light-wave));
+
+  transition: 0.3s;
+}
+
+.login-btn:hover,
+.signup-btn:hover,
+.logout-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(21, 112, 239, 0.35);
+}
+
+/* SEARCH RESULTS */
+
+.search-results {
+  position: absolute;
+
+  top: calc(100% + 12px);
+  left: 0;
+
+  width: 320px;
+
+  max-height: 350px;
+
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  z-index: 9999;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 14px;
+
+  border-radius: 18px;
+
+  text-decoration: none;
+
+  background: rgba(13, 43, 117, 0.95);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: 0.25s;
+}
+
+.user-card:hover {
+  transform: translateY(-2px);
+
+  background: rgba(21, 112, 239, 0.95);
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  background: linear-gradient(135deg, var(--wave), var(--seafoam));
+}
+
+.user-card h2 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 16px;
+}
+
+/* OVERLAY */
+
+.search-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  backdrop-filter: blur(8px);
+
+  background: rgba(0, 0, 0, 0.3);
+
+  z-index: 500;
+}
+
+.messages-btn {
+  position: relative;
+}
+
+.notification-dot {
+  position: absolute;
+
+  top: -8px;
+  right: -8px;
+
+  min-width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  background: #ff4d4d;
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
