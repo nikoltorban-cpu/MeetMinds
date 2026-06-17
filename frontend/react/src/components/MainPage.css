@@ -15,3 +15,23 @@ body {
 
   color: white;
 }
+
+.welcome-section {
+  max-width: 800px;
+  margin: 80px auto;
+  text-align: center;
+  padding: 40px;
+  background-color: #081b4b7c;
+  border-radius: 17px;
+}
+
+.welcome-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.welcome-section p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
