@@ -6,6 +6,8 @@ import Navbar from "./NavBar";
 
 import "./Following.css";
 
+import API_URL from "../config"
+
 function Following() {
   const user = JSON.parse(localStorage.getItem("user"));
 

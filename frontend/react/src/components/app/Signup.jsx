@@ -5,6 +5,7 @@ import "./Login.css";
 import Navbar from "./NavBar";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import API_URL from "../config"
 
 function Signup() {
   const [username, setUsername] = useState("");

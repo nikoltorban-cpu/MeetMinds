@@ -4,6 +4,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import API_URL from "../config"
 
 function Navbar({ focused, setFocused }) {
   const user = JSON.parse(localStorage.getItem("user"));

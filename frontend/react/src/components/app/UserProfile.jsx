@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "./NavBar";
 import "./Profile.css";
+import API_URL from "../config"
 
 function UserProfile() {
   const { id } = useParams();

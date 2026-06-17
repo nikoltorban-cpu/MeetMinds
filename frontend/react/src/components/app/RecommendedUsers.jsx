@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./RecommendedUsers.css";
+import API_URL from "../config"
 
 function RecommendedUsers({ userId, interest }) {
   const [users, setUsers] = useState([]);

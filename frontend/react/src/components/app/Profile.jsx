@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import "./Profile.css";
 import Navbar from "./NavBar";
+import API_URL from "../config"
 
 function Profile() {
   const user = JSON.parse(localStorage.getItem("user"));

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import API_URL from "../config"
 
 function MovieCard({ movie }) {
   const [watched, setWatched] = useState(false);

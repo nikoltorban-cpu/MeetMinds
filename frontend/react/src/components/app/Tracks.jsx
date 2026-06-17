@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import "./Tracks.css";
 import Navbar from "./NavBar";
 import { FaSpotify } from "react-icons/fa";
+import API_URL from "../config"
 
 
 function Tracks() {

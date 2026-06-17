@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import Navbar from "../app/NavBar";
 
+import API_URL from "../config"
+
 import "./Messages.css";
 
 function Messages() {

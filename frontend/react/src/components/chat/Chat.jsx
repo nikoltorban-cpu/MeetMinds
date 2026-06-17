@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 
 import Navbar from "../app/NavBar";
 
+import API_URL from "../config"
+
 import "./Chat.css";
 
 function Chat() {

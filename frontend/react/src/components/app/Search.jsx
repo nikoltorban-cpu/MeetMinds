@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./NavBar";
 import "./Search.css";
+import API_URL from "../config"
 
 function Search() {
   const [search, setSearch] = useState("");
