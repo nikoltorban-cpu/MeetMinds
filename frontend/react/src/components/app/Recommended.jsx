@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Recommended.css";
+import API_URL from "../config";
 
 function Recommended() {
   const user = JSON.parse(localStorage.getItem("user"));
