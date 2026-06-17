@@ -4,6 +4,7 @@ import axios from "axios";
 import Navbar from "./NavBar";
 import "./Sports.css";
 import RecommendedUsers from "./RecommendedUsers";
+import API_URL from "../config"
 
 const pets = [
   "Dogs",
@@ -46,7 +47,7 @@ export default function Pets() {
     try {
       const user = JSON.parse(localStorage.getItem("user"));
 
-      await axios.post("http://localhost:3000/interests", {
+      await axios.post(`${API_URL}/interests`, {
         userId: user.id,
         category: "Pets",
         interest: openPet,
@@ -109,7 +110,7 @@ export default function Pets() {
             </button>
           </div>
         )}
-        {savedInterest && <RecommendedUsers interest={savedInterest} userId={user.id} />}
+        {savedInterest && <RecommendedUsers interest={savedInterest} userId={user?.id} />}
       </div>
     </>
   );

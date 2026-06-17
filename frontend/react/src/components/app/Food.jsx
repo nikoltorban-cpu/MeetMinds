@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import API_URL from "../config"
 
 import Navbar from "./NavBar";
 import "./Sports.css";
@@ -50,7 +51,7 @@ export default function Food() {
     try {
       const user = JSON.parse(localStorage.getItem("user"));
 
-      await axios.post("http://localhost:3000/interests", {
+      await axios.post(`${API_URL}/interests`, {
         userId: user.id,
         category: "Food",
         interest: openFood,
@@ -115,7 +116,7 @@ export default function Food() {
           </div>
         )}
         {savedInterest && (
-          <RecommendedUsers interest={savedInterest} userId={user.id} />
+          <RecommendedUsers interest={savedInterest} userId={user?.id} />
         )}
       </div>
     </>

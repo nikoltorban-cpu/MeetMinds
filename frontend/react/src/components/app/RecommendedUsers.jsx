@@ -8,7 +8,7 @@ function RecommendedUsers({ userId, interest }) {
   async function fetchUsers() {
     try {
       const response = await fetch(
-        `http://localhost:3000/recommended-users/${userId}/${interest}`,
+        `${API_URL}/recommended-users/${userId}/${interest}`,
       );
 
       const data = await response.json();

@@ -14,7 +14,7 @@ function Messages() {
   async function fetchConversations() {
     try {
       const response = await fetch(
-        `http://localhost:3000/conversations/${user.id}`,
+        `${API_URL}/conversations/${user.id}`,
       );
 
       const data = await response.json();

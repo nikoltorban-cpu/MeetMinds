@@ -42,7 +42,7 @@ function Tracks() {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/liked-songs",
+        `${API_URL}/liked-songs`,
 
         {
           method: "POST",
@@ -89,7 +89,7 @@ function Tracks() {
   async function fetchLikedTracks() {
     try {
       const response = await fetch(
-        `http://localhost:3000/liked-tracks/${user.id}`,
+        `${API_URL}/liked-tracks/${user.id}`,
       );
 
       const data = await response.json();
@@ -103,7 +103,7 @@ function Tracks() {
   async function fetchTrackLikes(trackId) {
     try {
       const response = await fetch(
-        `http://localhost:3000/track-likes/${trackId}`,
+        `${API_URL}/track-likes/${trackId}`,
       );
 
       const data = await response.json();

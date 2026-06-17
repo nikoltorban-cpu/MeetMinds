@@ -19,7 +19,7 @@ function Search() {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/users?search=${value}`,
+        `${API_URL}/users?search=${value}`,
       );
 
       const data = await response.json();

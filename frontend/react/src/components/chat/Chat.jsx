@@ -18,7 +18,7 @@ function Chat() {
   async function fetchMessages() {
     try {
       const response = await fetch(
-        `http://localhost:3000/messages/${user.id}/${id}`,
+        `${API_URL}/messages/${user.id}/${id}`,
       );
 
       const data = await response.json();
@@ -31,7 +31,7 @@ function Chat() {
 
   async function markMessagesAsRead() {
     try {
-      await fetch("http://localhost:3000/messages/read", {
+      await fetch(`${API_URL}/messages/read`, {
         method: "PUT",
 
         headers: {
@@ -58,7 +58,7 @@ function Chat() {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/messages",
+        `${API_URL}/messages`,
 
         {
           method: "POST",

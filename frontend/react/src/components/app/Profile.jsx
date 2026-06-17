@@ -17,7 +17,7 @@ function Profile() {
 
   async function fetchPosts() {
     try {
-      const response = await fetch(`http://localhost:3000/posts/${user.id}`);
+      const response = await fetch(`${API_URL}/posts/${user.id}`);
 
       const data = await response.json();
 
@@ -30,7 +30,7 @@ function Profile() {
   async function fetchReviewedMovies() {
     try {
       const response = await fetch(
-        `http://localhost:3000/user-reviewed-movies/${user.id}`,
+        `${API_URL}/user-reviewed-movies/${user.id}`,
       );
 
       const data = await response.json();
@@ -44,7 +44,7 @@ function Profile() {
   async function fetchLikedSongs() {
     try {
       const response = await fetch(
-        `http://localhost:3000/liked-songs/${user.id}`,
+        `${API_URL}/liked-songs/${user.id}`,
       );
 
       const data = await response.json();
@@ -60,7 +60,7 @@ function Profile() {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/posts",
+        `${API_URL}/posts`,
 
         {
           method: "POST",
@@ -96,7 +96,7 @@ function Profile() {
   async function fetchFollowData() {
     try {
       const response = await fetch(
-        `http://localhost:3000/follow-data/${user.id}`,
+        `${API_URL}/follow-data/${user.id}`,
       );
 
       const data = await response.json();
@@ -144,7 +144,7 @@ function Profile() {
   async function fetchInterests() {
     try {
       const response = await fetch(
-        `http://localhost:3000/users/${user.id}/interests`,
+        `${API_URL}/users/${user.id}/interests`,
       );
 
       const data = await response.json();
@@ -168,7 +168,7 @@ function Profile() {
   async function likePost(postId) {
     try {
       const response = await fetch(
-        "http://localhost:3000/like-post",
+        `${API_URL}/like-post`,
 
         {
           method: "POST",
@@ -212,7 +212,7 @@ function Profile() {
   async function followUser(otherUserId) {
     try {
       const response = await fetch(
-        "http://localhost:3000/follow",
+        `${API_URL}/follow`,
 
         {
           method: "POST",

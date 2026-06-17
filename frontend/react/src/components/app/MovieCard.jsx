@@ -21,7 +21,7 @@ function MovieCard({ movie }) {
   async function fetchReviews() {
     try {
       const response = await fetch(
-        `http://localhost:3000/movie-reviews/${movie.id}`,
+        `${API_URL}/movie-reviews/${movie.id}`,
       );
 
       const data = await response.json();
@@ -43,7 +43,7 @@ function MovieCard({ movie }) {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/movie-review",
+        `${API_URL}/movie-review`,
 
         {
           method: "POST",
@@ -112,12 +112,6 @@ function MovieCard({ movie }) {
         </div>
 
         <div className="reviews-section">
-          <button
-            className="movie-btn"
-            onClick={() => setWantToWatch(!wantToWatch)}
-          >
-            🎯 Want to Watch
-          </button>
           {!watched ? (
             <button className="movie-btn" onClick={() => setWatched(true)}>
               👀 Watched

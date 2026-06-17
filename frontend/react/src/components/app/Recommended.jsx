@@ -11,7 +11,7 @@ function Recommended() {
     if (!user) return;
     try {
       const response = await fetch(
-        `http://localhost:3000/recommended-users/${user.id}`,
+        `${API_URL}/recommended-users/${user.id}`,
       );
 
       const data = await response.json();
@@ -23,7 +23,7 @@ function Recommended() {
 
   async function fetchNewUsers() {
     try {
-      const response = await fetch("http://localhost:3000/new-users");
+      const response = await fetch(`${API_URL}/new-users");
       const data = await response.json();
       const user = JSON.parse(localStorage.getItem("user"));
 

@@ -12,7 +12,7 @@ function Login() {
     e.preventDefault();
 
     const response = await fetch(
-      "http://localhost:3000/login",
+      `${API_URL}/login`,
 
       {
         method: "POST",

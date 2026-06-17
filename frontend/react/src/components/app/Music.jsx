@@ -5,6 +5,7 @@ import Navbar from "./NavBar";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import RecommendedUsers from "./RecommendedUsers";
+import API_URL from "../config"
 
 const genres = [
   { name: "Pop", icon: "🎤" },
@@ -99,7 +100,7 @@ function Music() {
     try {
       const user = JSON.parse(localStorage.getItem("user"));
 
-      await axios.post("http://localhost:3000/interests", {
+      await axios.post(`${API_URL}/interests`, {
         userId: user.id,
         category: "Music",
         interest: selectedGenre.name,
@@ -119,7 +120,7 @@ function Music() {
   async function fetchAlbumLikes(albumId) {
     try {
       const response = await fetch(
-        `http://localhost:3000/album-likes/${albumId}`,
+        `${API_URL}/album-likes/${albumId}`,
       );
 
       const data = await response.json();
@@ -194,7 +195,7 @@ function Music() {
         )}
 
         {savedInterest && (
-          <RecommendedUsers interest={savedInterest} userId={user.id} />
+          <RecommendedUsers interest={savedInterest} userId={user?.id} />
         )}
 
         <div className="browse-section">

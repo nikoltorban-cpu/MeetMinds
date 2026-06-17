@@ -3,6 +3,7 @@ import Navbar from "./NavBar";
 import "./Sports.css";
 import axios from "axios";
 import RecommendedUsers from "./RecommendedUsers";
+import API_URL from "../config"
 
 const sports = [
   "Gym",
@@ -43,7 +44,7 @@ export default function Sports() {
         return;
       }
 
-      await axios.post("http://localhost:3000/interests", {
+      await axios.post(`${API_URL}/interests`, {
         userId,
         category: "Sports",
         interest: openSport,
@@ -110,7 +111,7 @@ export default function Sports() {
           </div>
         )}
         {savedInterest && (
-          <RecommendedUsers interest={savedInterest} userId={user.id} />
+          <RecommendedUsers interest={savedInterest} userId={user?.id} />
         )}
       </div>
     </>

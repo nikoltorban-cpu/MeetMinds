@@ -4,6 +4,7 @@ import API_KEY from "../api/tmdb";
 import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
 import RecommendedUsers from "./RecommendedUsers";
+import API_URL from "../config"
 
 import "./Movies.css";
 import Navbar from "./NavBar";
@@ -76,7 +77,7 @@ function Movies() {
     try {
       const user = JSON.parse(localStorage.getItem("user"));
 
-      await axios.post("http://localhost:3000/interests", {
+      await axios.post(`${API_URL}/interests`, {
         userId: user.id,
         category: "Movies",
         interest: selectedGenre.name,
@@ -178,7 +179,7 @@ function Movies() {
           </div>
         )}
         {savedGenre && (
-        <RecommendedUsers interest={savedGenre} userId={user.id} />
+        <RecommendedUsers interest={savedGenre} userId={user?.id} />
         )}
 
         <div className="browse-section">

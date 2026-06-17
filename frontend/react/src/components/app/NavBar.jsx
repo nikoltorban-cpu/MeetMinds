@@ -28,7 +28,7 @@ function Navbar({ focused, setFocused }) {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/users?search=${value}`,
+        `${API_URL}/users?search=${value}`,
       );
 
       const data = await response.json();
@@ -42,7 +42,7 @@ function Navbar({ focused, setFocused }) {
   async function fetchUnreadMessages() {
     try {
       const response = await fetch(
-        `http://localhost:3000/unread-messages/${user.id}`,
+        `${API_URL}/unread-messages/${user.id}`,
       );
 
       const data = await response.json();

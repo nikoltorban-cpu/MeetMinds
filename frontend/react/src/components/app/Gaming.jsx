@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import API_URL from "../config"
 
 import Navbar from "./NavBar";
 import "./Sports.css";
@@ -43,7 +44,7 @@ export default function Gaming() {
       );
 
       await axios.post(
-        "http://localhost:3000/interests",
+        `${API_URL}/interests`,
         {
           userId: user.id,
           category: "Gaming",
@@ -125,7 +126,7 @@ export default function Gaming() {
           </div>
         )}
         {openGame && (
-          <RecommendedUsers interest={openGame} userId={user.id} />
+          <RecommendedUsers interest={openGame} userId={user?.id} />
         )}
 
       </div>

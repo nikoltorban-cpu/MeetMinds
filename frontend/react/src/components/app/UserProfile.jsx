@@ -19,7 +19,7 @@ function UserProfile() {
 
   async function fetchUser() {
     try {
-      const response = await fetch(`http://localhost:3000/user/${id}`);
+      const response = await fetch(`${API_URL}/user/${id}`);
 
       const data = await response.json();
 
@@ -34,7 +34,7 @@ function UserProfile() {
   async function fetchComments() {
     try {
       const response = await fetch(
-        `http://localhost:3000/movie-comments/${id}`,
+        `${API_URL}/movie-comments/${id}`,
       );
 
       const data = await response.json();
@@ -48,7 +48,7 @@ function UserProfile() {
   async function fetchInterests() {
     try {
       const response = await fetch(
-        `http://localhost:3000/users/${id}/interests`,
+        `${API_URL}/users/${id}/interests`,
       );
 
       const data = await response.json();
@@ -61,7 +61,7 @@ function UserProfile() {
 
   async function fetchFollowData() {
     try {
-      const response = await fetch(`http://localhost:3000/follow-data/${id}`);
+      const response = await fetch(`${API_URL}/follow-data/${id}`);
 
       const data = await response.json();
 
@@ -76,7 +76,7 @@ function UserProfile() {
   async function checkFollowing() {
     try {
       const response = await fetch(
-        `http://localhost:3000/is-following/${loggedUser.id}/${id}`,
+        `${API_URL}/is-following/${loggedUser.id}/${id}`,
       );
 
       const data = await response.json();
@@ -90,7 +90,7 @@ function UserProfile() {
   async function fetchReviewedMovies() {
     try {
       const response = await fetch(
-        `http://localhost:3000/user-reviewed-movies/${id}`,
+        `${API_URL}/user-reviewed-movies/${id}`,
       );
 
       const data = await response.json();
@@ -103,7 +103,7 @@ function UserProfile() {
 
   async function fetchLikedSongs() {
     try {
-      const response = await fetch(`http://localhost:3000/liked-songs/${id}`);
+      const response = await fetch(`${API_URL}/liked-songs/${id}`);
       const data = await response.json();
 
       setLikedSongs(data);
@@ -114,7 +114,7 @@ function UserProfile() {
 
   async function followUser() {
     try {
-      const response = await fetch("http://localhost:3000/follow", {
+      const response = await fetch(`${API_URL}/follow`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -140,7 +140,7 @@ function UserProfile() {
 
   async function unfollowUser() {
     try {
-      const response = await fetch("http://localhost:3000/unfollow", {
+      const response = await fetch(`${API_URL}/unfollow`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

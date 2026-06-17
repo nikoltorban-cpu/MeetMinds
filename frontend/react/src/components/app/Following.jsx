@@ -14,7 +14,7 @@ function Following() {
   async function fetchFollowing() {
     try {
       const response = await fetch(
-        `http://localhost:3000/following/${user.id}`,
+        `${API_URL}/following/${user.id}`,
       );
 
       const data = await response.json();
